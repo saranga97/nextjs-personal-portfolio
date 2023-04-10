@@ -50,6 +50,9 @@ import { color, motion } from "framer-motion";
 import { useState } from "react";
 import { cursorTo } from "readline";
 import { sendContactForm } from "../lib/api";
+import { ChangeEventHandler } from "react";
+import { ChangeEvent } from "react";
+import { text } from "stream/consumers";
 
 const initValues = { name: "", email: "", subject: "", message: "" };
 
@@ -64,11 +67,13 @@ export default function Home() {
   const [touched, setTouched] = useState({});
 
   const { values, isLoading, error } = state;
+  
+       
 
-  const onBlur = ({ target }) =>
+  const onBlur = ({ target }: ChangeEvent<HTMLInputElement>) =>
     setTouched((prev) => ({ ...prev, [target.name]: true }));
 
-  const handleChange = ({ target }) =>
+  const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) =>
     setState((prev) => ({
       ...prev,
       values: {
@@ -96,7 +101,7 @@ export default function Home() {
       setState((prev) => ({
         ...prev,
         isLoading: false,
-        error: error.message,
+        // errorMessage: error.message,
       }));
     }
   };
@@ -540,7 +545,7 @@ export default function Home() {
             <h3 className="text-5xl text-center pt-15 font-bold opacity-60 dark:text-white dark:opacity-100">ImmersiveX Tech Solutions</h3>
             <p className="text-center text-sm py-10 text-gray-400 leading-6"> Welcome to our new Freelancing Start up!</p>
           </div>
-          <div className="px-60">
+          <div className="lg:px-60 sm:px:5 md:px-5">
           <Image
                   src={cover}
                   alt="web images"
@@ -572,8 +577,8 @@ export default function Home() {
           {error}
         </Text>
       )}
-
-      <FormControl isRequired isInvalid={touched.name && !values.name} mb={5}>
+ <FormControl isRequired  mb={5}>
+  {/* isInvalid={touched.name && !values.name} */}
         <FormLabel color={"White"}>Name</FormLabel>
         <Input
           type="text"
@@ -586,7 +591,8 @@ export default function Home() {
         <FormErrorMessage>Required</FormErrorMessage>
       </FormControl>
 
-      <FormControl isRequired isInvalid={touched.email && !values.email} mb={5}>
+      <FormControl isRequired  mb={5}>                     
+       {/* //isInvalid={touched.email && !values.email} */}
         <FormLabel color={"White"}>Email</FormLabel>
         <Input
           type="email"
@@ -602,7 +608,7 @@ export default function Home() {
       <FormControl
         mb={5}
         isRequired
-        isInvalid={touched.subject && !values.subject}
+        // isInvalid={touched.subject && !values.subject}
       >
         <FormLabel color={"White"}>Subject</FormLabel>
         <Input
@@ -618,18 +624,18 @@ export default function Home() {
 
       <FormControl
         isRequired
-        isInvalid={touched.message && !values.message}
+        isInvalid={!values.message} //"touched.message && "
         mb={5}
       >
         <FormLabel color={"White"}>Message</FormLabel>
         <Textarea
-          type="text"
+          
           name="message"
-          rows={4}
+          rows={5}
           errorBorderColor="red.300"
           value={values.message}
-          onChange={handleChange}
-          onBlur={onBlur}
+          // onChange={handleChange}
+          // onBlur={onBlur}
         />
         <FormErrorMessage>Required</FormErrorMessage>
       </FormControl>

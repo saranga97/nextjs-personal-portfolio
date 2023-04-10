@@ -31,5 +31,8 @@
     "eslint-config-next": "^13.3.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.3.1"
+  },
+  "compilerOptions": {
+    "useUnknownInCatchVariables": false
   }
 }
