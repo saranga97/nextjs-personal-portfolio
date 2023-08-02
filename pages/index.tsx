@@ -452,9 +452,11 @@ export default function Home() {
               Portfolio
             </h3>
             <p className="text-center text-sm py-10 text-gray-400 leading-6">
-              Here are some collection of my projects and client works that
-              demonstrates my skills, experience, and achievements. It serves as
-              a showcase of their my work and abilities.
+                Welcome to my portfolio, where I take pride in showcasing a
+                diverse collection of my projects and client works. This
+                selection exemplifies my skills, experience, and achievements,
+                serving as a testament to my capabilities and dedication to
+                excellence.
             </p>
           </div>
           {/* images */}
