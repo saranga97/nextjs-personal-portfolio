@@ -429,7 +429,7 @@ export default function Home() {
                 </motion.div>
                 
               </div>
-              <div className="basis-1/5 flex-1">
+              {/* <div className="basis-1/5 flex-1">
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 <Image
                   src={cer4}
@@ -439,14 +439,14 @@ export default function Home() {
                 />
                 </motion.div>
                 
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
 
         {/*                             PORTFOLIO                    */}
 
-        <section className="px-10 md:px-20 lg:px-40 py-0">
+        {/* <section className="px-10 md:px-20 lg:px-40 py-0">
           <div>
             <h3 className=" text-5xl text-center pt-15 font-bold opacity-60 dark:text-white dark:opacity-100">
               Portfolio
@@ -460,7 +460,7 @@ export default function Home() {
             </p>
           </div>
           {/* images */}
-          <div className="flex flex-col gap-10 lg:flex-row lg:flex-wrap">
+          {/* <div className="flex flex-col gap-10 lg:flex-row lg:flex-wrap">
             <div className="basis-1/3 flex-1">
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 3 }}
@@ -512,7 +512,7 @@ export default function Home() {
                   layout="responsive"
                 />
               </motion.div>
-            </div>
+            </div> */} 
             {/* <div className="basis-1/3 flex-1">
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 3 }}
@@ -539,8 +539,8 @@ export default function Home() {
                 />
               </motion.div>
             </div> */}
-          </div>
-        </section>
+          {/* </div>
+        </section> */}
 
         <section className="px-10 md:px-20 lg:px-40 pt-20">
           <div>
@@ -625,8 +625,8 @@ export default function Home() {
       </FormControl>
 
       <FormControl
-        isRequired
-        isInvalid={!values.message} //"touched.message && "
+        // isRequired
+        //isInvalid={!values.message} //"touched.message && "
         mb={5}
       >
         <FormLabel color={"White"}>Message</FormLabel>
@@ -636,10 +636,10 @@ export default function Home() {
           rows={5}
           errorBorderColor="red.300"
           value={values.message}
-          // onChange={handleChange}
-          // onBlur={onBlur}
+         // onChange={handleChange}
+          //onBlur={onBlur}
         />
-        <FormErrorMessage>Required</FormErrorMessage>
+        {/* <FormErrorMessage>Required</FormErrorMessage> */}
       </FormControl>
       <Center>
       <Button className=" text-center self-center items-center justify-center"
